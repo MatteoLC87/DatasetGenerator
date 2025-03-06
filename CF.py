@@ -1,17 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar  5 17:30:21 2025
-
-@author: matte
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Mar  5 16:58:42 2025
-
-@author: matte
-"""
-
 import random
 import pandas as pd
 
