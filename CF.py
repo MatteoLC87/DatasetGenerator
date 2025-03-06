@@ -1,8 +1,7 @@
 import random
 import pandas as pd
 
-def fiscalCodeGenerator(inputName, inputSurname):
-
+def fiscalCodeGenerator(inputName, inputSurname):    
     consonants = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
     vocals = ["a","e","i","o","u"]
     alphabet = vocals + consonants
