@@ -89,6 +89,6 @@ def fiscalCodeGenerator(inputName, inputSurname):
     
     controlLetter = alphabet[random.randint(0,25)].upper()
     
-    fiscalCode = ''.join(surnameCF) + ''.join(nameCF) + str(yearCF) + monthCF + str("{:02d}".format(dayCF)) + belfioreCodeCF + controlLetter
+    fiscalCode = ''.join(surnameCF) + ''.join(nameCF) + str(yearCF) + monthCF + str("{:02}".format(dayCF)) + belfioreCodeCF + controlLetter
     
     return(fiscalCode)
