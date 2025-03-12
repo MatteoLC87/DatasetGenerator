@@ -39,7 +39,7 @@ def fiscalCodeGenerator(inputName, inputSurname):
                     
                     while len(nameCF) < 3:
                         nameCF.append("x")
-                    break
+                    
     nameCF = [s.upper() for s in nameCF]
     
     i=0
