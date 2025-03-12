@@ -17,7 +17,7 @@ def fiscalCodeGenerator(inputName, inputSurname):
     name_lower = name.lower()
     surname_lower = surname.lower()
     
-    i=0
+    i = 0
     
     while i < len(name_lower) and len(nameCF) < 3:
         
