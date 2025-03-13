@@ -115,4 +115,3 @@ else:
     CustomersData = {'CustomerID':customerIDs,
                        'CustomerName':customerFullNames}
 Customers = pd.DataFrame(CustomersData)
-print(Customers)
