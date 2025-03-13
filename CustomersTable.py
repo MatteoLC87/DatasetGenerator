@@ -2,6 +2,21 @@ import random
 import pandas as pd
 import string
 
+customerTotalNumber = 10
+includeFiscalCode = eval("True")
+surnamesPath = "https://raw.githubusercontent.com/MatteoLC87/DatasetGenerator/refs/heads/main/surnames.csv"
+namesPath = "https://raw.githubusercontent.com/MatteoLC87/DatasetGenerator/refs/heads/main/names.csv"
+
+customerIDs = []
+
+customerFullNames = []
+
+fiscalCodes = []
+
+surnames = pd.read_csv(surnamesPath)
+
+names = pd.read_csv(namesPath)
+
 def fiscalCodeGenerator(inputName, inputSurname):    
 
     letters = [x for x in string.ascii_uppercase]
@@ -70,3 +85,34 @@ def fiscalCodeGenerator(inputName, inputSurname):
     fiscalCode = ''.join(Extract3Letters(surname_upper)) + ''.join(Extract3Letters(name_upper)) + str(yearCF).zfill(2) + monthCF + str(dayCF).zfill(2) + belfioreCodeCF + controlLetter
     
     return(fiscalCode)
+
+
+if includeFiscalCode == True:
+    for i in range(0,customerTotalNumber):
+        
+        customerIDs.append(i+1)
+        
+        customerName = names.at[random.randint(0,names.size-1),"name"]
+        customerSurname = surnames.at[random.randint(0,surnames.size-1),"surname"]
+        
+        customerFullNames.append(customerName + " " + customerSurname)
+        
+        fiscalCodes.append(fiscalCodeGenerator(customerName, customerSurname))
+    
+    CustomersData = {'CustomerID':customerIDs,
+                       'CustomerName':customerFullNames,
+                       'FiscalCode':fiscalCodes}
+else:
+    for i in range(0,customerTotalNumber):
+        
+        customerIDs.append(i+1)
+        
+        customerName = names.at[random.randint(0,names.size-1),"name"]
+        customerSurname = surnames.at[random.randint(0,surnames.size-1),"surname"]
+        
+        customerFullNames.append(customerName + " " + customerSurname)
+    
+    CustomersData = {'CustomerID':customerIDs,
+                       'CustomerName':customerFullNames}
+Customers = pd.DataFrame(CustomersData)
+print(Customers)
