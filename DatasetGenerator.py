@@ -189,8 +189,8 @@ if includeFiscalCode == True:
         fiscalCodes.append(fiscalCodeGenerator(customerName, customerSurname))
     
     CustomersData = {'CustomerID':customerIDs,
-                       'CustomerName':customerFullNames,
-                       'FiscalCode':fiscalCodes}
+                     'CustomerName':customerFullNames,
+                     'FiscalCode':fiscalCodes}
 else:
     for i in range(0,customerTotalNumber):
         
