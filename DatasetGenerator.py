@@ -5,15 +5,16 @@ import random
 import string
 
 
-
-#PARAMETERS SECTION: 
-#In this section, every parameter is followed by its commented version, which 
-#is suitable for PowerBI Desktop M code.
-#In order to run this python code within the PowerBI Desktop DatasetGenerator, 
-#switch not commented with commented parameters
+"""
+PARAMETERS SECTION: 
+In this section, every parameter is followed by its commented version, which 
+is suitable for PowerBI Desktop M code.
+In order to run this python code within the PowerBI Desktop DatasetGenerator, 
+switch not commented with commented parameters
+"""
 
 #Customer parameters
-customerTotalNumber = 10
+customerTotalNumber = 100
 #customerTotalNumber = int("&Text.From(#"number of Customers")&")
 includeFiscalCode = eval("False")
 #includeFiscalCode = eval("""&Text.From(#"include Fiscal Code")&""")
@@ -69,11 +70,11 @@ ProductNamesPart2Path = "https://raw.githubusercontent.com/MatteoLC87/DatasetGen
 
 
 #SalesOrderDetail parameters
-numberOfOrders = 100
+numberOfOrders = 500
 #numberOfOrders = int("&Text.From(#"number of orders")&")
 lowerOrderLineNumber = 1 #if lowerOrderLineNumber>upperOrderLineNumber, then lowerOrderLineNumber=upperOrderLineNumber
 #lowerOrderLineNumber = int("&Text.From(#"minimum order line number")&")
-upperOrderLineNumber = 5 #caps at numberOfProducts, if upperOrderLineNumber>numberOfProducts, then upperOrderLineNumber=numberOfProducts
+upperOrderLineNumber = 1 #caps at numberOfProducts, if upperOrderLineNumber>numberOfProducts, then upperOrderLineNumber=numberOfProducts
 #upperOrderLineNumber = int("&Text.From(#"maximum order line number")&")
 noDiscountProbability = 60
 #noDiscountProbability = int("&Text.From(#"probability for Unit Price of NOT being discounted")&")
@@ -87,7 +88,7 @@ upperQuantity = 10
 #upperQuantity = int("&Text.From(#"maximum Quantity")&")
 
 
-
+"""
 #SalesOrderHeader does not add new parameters
 
 
@@ -95,7 +96,8 @@ upperQuantity = 10
 
 #CODE SECTION:
 #This section does not require modifications in order to run on PowerBI Desktop.
-    
+"""
+  
 #Customers code
 customerIDs = []
 customerFullNames = []
@@ -104,49 +106,49 @@ fiscalCodes = []
 surnames = pd.read_csv(customerSurnamesPath)
 names = pd.read_csv(customerNamesPath)
 
+letters = [x for x in string.ascii_uppercase]
+vowels = [x for x in "AEIOU"]
+consonants = [x for x in letters if not x in vowels]
+months = ["A","B","C","D","E","H","L","M","P","R","S","T"]
+
+
+def Extract3Letters(name_or_surname):
+    
+    lettersTriplet = []
+    
+    i = 0
+    while i < len(name_or_surname) and len(lettersTriplet) < 3:
+        
+        if name_or_surname[i] in consonants:
+            lettersTriplet.append(name_or_surname[i])
+        i += 1
+        
+        if i == len(name_or_surname):
+            
+            i = 0
+            while i < len(name_or_surname) and len(lettersTriplet) < 3:
+                if name_or_surname[i] in vowels:
+                    lettersTriplet.append(name_or_surname[i])
+                i += 1
+            
+                if i == len(name_or_surname):
+                    
+                    while len(lettersTriplet) < 3:
+                        lettersTriplet.append("X")
+                    
+    lettersTriplet = [s.upper() for s in lettersTriplet]
+    
+    return lettersTriplet
+
+
 def fiscalCodeGenerator(inputName, inputSurname):    
 
-    letters = [x for x in string.ascii_uppercase]
-    vowels = [x for x in "AEIOU"]
-    consonants = [x for x in letters if not x in vowels]
-    months = ["A","B","C","D","E","H","L","M","P","R","S","T"]
-    
     name = inputName
     surname = inputSurname
     
     name_upper = name.upper()
     surname_upper = surname.upper()
-    
-    def Extract3Letters(name_or_surname):
         
-        lettersTriplet = []
-        i = 0
-        
-        while i < len(name_or_surname) and len(lettersTriplet) < 3:
-            
-            if name_or_surname[i] in consonants:
-                lettersTriplet.append(name_or_surname[i])
-            i += 1
-            
-            if i == len(name_or_surname):
-                
-                i = 0
-                
-                while i < len(name_or_surname) and len(lettersTriplet) < 3:
-                    
-                    if name_or_surname[i] in vowels:
-                        lettersTriplet.append(name_or_surname[i])
-                    i += 1
-                
-                    if i == len(name_or_surname):
-                        
-                        while len(lettersTriplet) < 3:
-                            lettersTriplet.append("X")
-                        
-        lettersTriplet = [s.upper() for s in lettersTriplet]
-        
-        return lettersTriplet
-    
     yearCF = random.randint(0,99)
     
     monthNo = random.randint(1,12)   
@@ -200,7 +202,7 @@ else:
         customerFullNames.append(customerName + " " + customerSurname)
     
     CustomersData = {'CustomerID':customerIDs,
-                       'CustomerName':customerFullNames}
+                     'CustomerName':customerFullNames}
 Customer = pd.DataFrame(CustomersData)
 
 
@@ -327,7 +329,7 @@ if lowerOrderLineNumber > upperOrderLineNumber:
 
 if noDiscountProbability < 0:
     noDiscountProbability = 0
-if noDiscountProbability > 100:
+elif noDiscountProbability > 100:
     noDiscountProbability = 100
     
 currentDiscount = maxDiscount
