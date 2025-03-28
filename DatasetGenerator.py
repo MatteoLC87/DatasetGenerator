@@ -265,7 +265,6 @@ SalespersonDF = {'SalespersonName':salespersonName_List_spTable,
              'HireDate':hireDate_List_spTable,
              'WorkingDays':workingDays_List_spTable}
 Salesperson = pd.DataFrame(SalespersonDF)
-Salesperson.index = Salesperson.index + 1
 Salesperson = Salesperson.sort_values(by = ['HireDate'])
 Salesperson.insert(0, "SalespersonID", list(range(1,salespersonTotalNumber+1)))
 
