@@ -9,8 +9,8 @@ The python output Dataset was already normalized, to make normalization operatio
 The code was developed aiming to guarantee coherent parameters, while trying to randomize the data as much as possible.
 
 Here are explained a couple of meaningful examples about the reasoning behind the adopted restrictions:
-- Considering a specific Salesperson, the dates for the sales for which this subject is responsible MUST be between the 
-  "Salesperson hire date" and the following "WorkingDays" of that Salesperson.
+- Considering a specific Salesperson, the dates for the sales for which this subject is responsible MUST be between the "Salesperson hire date" 
+  and the following "WorkingDays" of that Salesperson.
 - Product names were obtained concatenating one word from a list "part1" and a second one from a list "part2". 
   The mathematical maximum number of possible unique names was the product of "part1" and "part2" elements. 
   The logical consequence was that the maximum number of products had to be hard coded to do not exceed that value.
