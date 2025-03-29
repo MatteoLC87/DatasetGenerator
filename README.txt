@@ -1,5 +1,5 @@
-The aim of this project was the creation of a Parameterized Dataset Generator, taking advantage of python-related tools for 
-the generation of data and using Power BI (PBI) to organize these data in a Relational Database, showing then a preview, based on few key visuals.
+The aim of this project was the creation of a Parameterized Dataset Generator, taking advantage of python-related tools for the generation of 
+data and using Power BI (PBI) to organize these data in a Relational Database, showing then a preview, based on few key visuals.
 The Entity Relationship (ER) Diagram is reported below.
 
 The main idea behind the python coding was to populate lists using specific logical criteria and restrictions. 
