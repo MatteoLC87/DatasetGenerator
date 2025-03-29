@@ -16,5 +16,5 @@ Here are explained a couple of meaningful examples about the reasoning behind th
   The logical consequence was that the maximum number of products had to be hard coded to do not exceed that value.
 
 I aimed to increase as much as possible the number of customizable parameters, in order to give the user more control over the generated Dataset.
-Among the parameters, there are also the Paths, which can be changed allowing to use customized sources of starting data (i.e. names for 
-customers and salespeople, parts to combine to obtain product names, geographical data...etc).
+Among the parameters, there are also the Paths, which can be changed allowing to use customized sources of starting data (i.e. names for customers 
+and salespeople, parts to combine to obtain product names, geographical data...etc).
