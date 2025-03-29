@@ -112,7 +112,7 @@ consonants = [x for x in letters if not x in vowels]
 months = ["A","B","C","D","E","H","L","M","P","R","S","T"]
 
 
-def Extract3Letters(name_or_surname):
+def extract3Letters(name_or_surname):
     
     lettersTriplet = []
     
@@ -171,7 +171,7 @@ def fiscalCodeGenerator(inputName, inputSurname):
     
     controlLetter = letters[random.randint(0,25)]
     
-    fiscalCode = ''.join(Extract3Letters(surname_upper)) + ''.join(Extract3Letters(name_upper)) + str(yearCF).zfill(2) + monthCF + str(dayCF).zfill(2) + belfioreCodeCF + controlLetter
+    fiscalCode = ''.join(extract3Letters(surname_upper)) + ''.join(extract3Letters(name_upper)) + str(yearCF).zfill(2) + monthCF + str(dayCF).zfill(2) + belfioreCodeCF + controlLetter
     
     return(fiscalCode)
 
