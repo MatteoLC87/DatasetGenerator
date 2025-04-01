@@ -1,5 +1,5 @@
 The aim of this project was the creation of a Parameterized Dataset Generator, taking advantage of python-related tools for the generation of 
-data and using Power BI (PBI) to organize these data in a Relational Database, showing then a preview, based on few key visuals.
+data and using Power BI (PBI) to organize this data in a Relational Database, showing then a preview, based on few key visuals.
 The Entity Relationship (ER) Diagram is reported below.
 
 The main idea behind the python coding was to populate lists using specific logical criteria and restrictions. 
@@ -13,8 +13,8 @@ Here are explained a couple of meaningful examples about the reasoning behind th
   and the following "WorkingDays" of that Salesperson.
 - Product names were obtained concatenating one word from a list "part1" and a second one from a list "part2". 
   The mathematical maximum number of possible unique names was the product of "part1" and "part2" elements. 
-  The logical consequence was that the maximum number of products had to be hard coded to do not exceed that value.
+  The logical consequence was that the maximum number of products had to be hard coded to not exceed that value.
 
-I aimed to increase as much as possible the number of customizable parameters, in order to give the user more control over the generated Dataset.
+I aimed to increase the number of customizable parameters as much as possible, in order to give the user more control over the generated Dataset.
 Among the parameters, there are also the Paths, which can be changed allowing to use customized sources of starting data (i.e. names for customers 
 and salespeople, parts to combine to obtain product names, geographical data...etc).
