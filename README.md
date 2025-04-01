@@ -1,5 +1,5 @@
 The aim of this project was the creation of a Parameterized Dataset Generator, taking advantage of [`python`](https://github.com/MatteoLC87/DatasetGenerator/blob/main/DatasetGenerator.py)-related tools for the generation of 
-data and using [`Power BI`](https://github.com/MatteoLC87/DatasetGenerator/blob/main/DatasetGenerator.pbxi) (PBI) to organize this data in a Relational Database, showing then a preview, based on few key visuals.
+data and using [`Power BI`](https://github.com/MatteoLC87/DatasetGenerator/blob/main/DatasetGenerator.pbix) (PBI) to organize this data in a Relational Database, showing then a preview, based on few key visuals.
 The Entity Relationship (ER) Diagram is reported [`here`](https://github.com/MatteoLC87/DatasetGenerator/blob/main/ER_Diagram.png).
 
 The main idea behind the python coding was to populate lists using specific logical criteria and restrictions. 
