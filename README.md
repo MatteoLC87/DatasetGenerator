@@ -19,4 +19,4 @@ I aimed to increase the number of customizable parameters as much as possible, i
 Among the parameters, there are also the Paths, which can be changed allowing to use customized sources of starting data (i.e. names for customers 
 and salespeople, parts to combine to obtain product names, geographical data...etc).
 
-([`Video`](https://youtu.be/WjGXeOCZtmQ))
+Here is a [`brief overview`](https://youtu.be/WjGXeOCZtmQ)
