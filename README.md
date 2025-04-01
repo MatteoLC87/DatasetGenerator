@@ -1,6 +1,6 @@
 The aim of this project was the creation of a Parameterized Dataset Generator, taking advantage of python-related tools for the generation of 
 data and using Power BI (PBI) to organize this data in a Relational Database, showing then a preview, based on few key visuals.
-The Entity Relationship (ER) Diagram is reported below.
+The Entity Relationship (ER) Diagram is reported [`here`](https://github.com/MatteoLC87/DatasetGenerator/blob/main/ER_Diagram.png).
 
 The main idea behind the python coding was to populate lists using specific logical criteria and restrictions. 
 Most of the variables used were parameterized, in order to allow the user to change their value through the PBI Query interface.
